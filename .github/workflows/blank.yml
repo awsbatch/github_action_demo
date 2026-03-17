@@ -5,4 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: execute echo command
-        run: echo "Welcome to Github-Actions"
+    #    run: echo "Welcome to Github-Actions" # execute single command
+        run: |
+          echo "this is first line"
+          echo "this is second command"
+          echo "This is third command"
