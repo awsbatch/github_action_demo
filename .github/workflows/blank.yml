@@ -8,7 +8,7 @@ jobs:
       - name: Build Step
         run: |
           echo "Hello, ${{ vars.MY_NAME }}"
-          echo "This is docker pass is ${{ vars.DOCKER_PASSWORD }}"
+          echo "This is docker pass is ${{ secrets.DOCKER_PASSWORD }}"
   test:
     runs-on: ubuntu-latest
     needs: build
