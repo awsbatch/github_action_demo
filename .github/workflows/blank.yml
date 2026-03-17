@@ -1,6 +1,14 @@
 # run multiple jobs in single workflow
 name: hello world
-on: push
+on: 
+  push:
+    branches:
+      - main
+      - develop
+      - 'release/**'
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
