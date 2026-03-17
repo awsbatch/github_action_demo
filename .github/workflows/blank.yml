@@ -1,6 +1,6 @@
 # run multiple jobs in single workflow
 name: hello world
-on: workflow_dispatch
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
