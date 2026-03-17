@@ -1,12 +1,20 @@
+# run multiple jobs in single workflow
 name: hello world
 on: workflow_dispatch
 jobs:
-  cmd:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: execute echo command
-    #    run: echo "Welcome to Github-Actions" # execute single command
-        run: |
-          echo "this is first line"
-          echo "this is second command"
-          echo "This is third command"
+      - name: Build Step
+        run: echo "A demo build"
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test build
+        run: echo "Running test cases"
+
+  deploy:
+    runs-on: ububuntu-latest
+    steps:
+      - name: Deploy the App
+        run: echo "Deploying a App"
