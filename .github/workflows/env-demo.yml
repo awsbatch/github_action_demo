@@ -9,5 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Connecting to env
+        env:  # check on step level
+          APP_NAME: "prod"
         run: echo "App is connected with $APP_NAME"
         
