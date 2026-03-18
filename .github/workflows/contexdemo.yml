@@ -8,3 +8,9 @@ jobs:
         run: |
            echo "this workflow is triger by ${{ github.actor }}
            echo "The repo name is ${{ github.repository }}
+
+      - name: Print all variable under github
+        run: echo ${{ toJson(github) }}
+
+      - name: Print environment variables
+        run: echo "$GITHUB_SHA"
