@@ -6,6 +6,12 @@ on:
        description: "Please provide end to deploy"
        default: dev
        required: true
+       type: choice
+       options:
+         - dev
+         - testing
+         - prod
+        
 jobs:
   input-demo-job:
     runs-on: ubuntu-latest
