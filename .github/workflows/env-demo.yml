@@ -4,6 +4,8 @@ env:
   APP_NAME: "dev"
 jobs:
   env_demo:
+    env:   # check president with one take prirority workspace lever or job level
+       APP_NAME: "test"
     runs-on: ubuntu-latest
     steps:
       - name: Connecting to env
