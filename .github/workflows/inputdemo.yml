@@ -1,26 +1,14 @@
-name: Mixed inputs
-
+name: input variables
 on:
-  workflow_dispatch:
-    inputs:
-      name:
-        type: choice
-        description: Who to greet
-        options: 
-        - monalisa
-        - cschleiden
-      message:
-        required: true
-      use-emoji:
-        type: boolean
-        description: Include 🎉🤣 emojis
-      environment:
-        type: environment
-
+ workflow_dispatch:
+   inputs:
+     environment:
+       description: "Please provide end to deploy"
+       default: dev
+       required: true
 jobs:
-  greet:
+  input-demo-job:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Send greeting
-      run: echo "${{ github.event.inputs.message }} ${{ fromJSON('["", "🥳"]')[github.event.inputs.use-emoji == 'true'] }} ${{ github.event.inputs.name }}"
+      - name: Deploy the app in this env ${{ inputs.environment }}
+        run: echo "Deploying the code in this env ${{ inputs.environment }}
