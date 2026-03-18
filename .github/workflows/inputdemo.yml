@@ -11,10 +11,16 @@ on:
          - dev
          - testing
          - prod
+     tags:
+       description: Please provide deployment tags
+       required: true
+       
         
 jobs:
   input-demo-job:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the app in this env ${{ inputs.environment }}
-        run: echo "Deploying the code in this env ${{ inputs.environment }}"
+        run: |
+          echo "Deploying the code in this env ${{ inputs.environment }}"
+          echo "this tag ${{ inputs.tags }} is going to deploy in this env ${{ inputs.environment }}"
