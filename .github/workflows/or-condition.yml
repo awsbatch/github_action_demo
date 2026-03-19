@@ -1,0 +1,9 @@
+name: OR condition demo
+on: push
+jobs:
+  ordemo:
+   runs-on: ubuntu-latest
+   steps:
+     - name: run for awsbatch or ravendratech
+       if: github.actor == 'ravendra' || github.actor == 'awsbatch'
+       run: echo "This trigered by ravendra or aws batch"
