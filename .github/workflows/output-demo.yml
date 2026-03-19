@@ -14,5 +14,5 @@ jobs:
     needs: build
     steps:
       - name: Deploy the app
-        run: echo "We are deploying the app with version ${{ needs.build.outputs.version }}"
+        run: echo "We are deploying the app with version ${{ needs.build.outputs.my_version }}"
         
