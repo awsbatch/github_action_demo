@@ -11,8 +11,9 @@ jobs:
     if: startsWith(github.ref_name, 'feature') && github.event_name == 'push'
     steps:
       - name: Perform code quality check
-        run: echo "Performing code quality check in the code"
-
+        run: |
+           echo "Performing code quality check in the code"
+           exit 1 # write this line to test failure notification only
   dev-deploy:
     runs-on: ubuntu-latest
     if: github.ref_name == 'develop' && github.event_name == 'push'
